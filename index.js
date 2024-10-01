@@ -24,6 +24,7 @@ import KataJelekRoute from "./routes/KataJelekRoute.js";
 import KategoriRoute from "./routes/KategoriRoute.js";
 import LinkTerkaitRoute from "./routes/LinkTerkaitRoute.js";
 import LogoRoute from "./routes/LogoRoute.js";
+import MenuRoute from "./routes/MenuRoute.js";
 import ModulRoute from "./routes/ModulRoute.js";
 import ModAlamatRoute from "./routes/ModAlamatRoute.js";
 import ModYmRoute from "./routes/ModYmRoute.js";
@@ -44,7 +45,7 @@ const store = new sessionStore({
 // Jangan lupa kalo ga dipake dikasih komentar, ini buat bikin tabel
 (async () => {
   await db.sync();
-})(); 
+})();
 
 app.use(
   session({
@@ -80,7 +81,7 @@ app.use(AlbumRoute);
 app.use(BackgroundRoute);
 app.use(BannerRoute);
 app.use(CommentRoute);
-app.use(DownloadRoute); 
+app.use(DownloadRoute);
 app.use(HalamanStatisRoute);
 app.use(HeaderRoute);
 app.use(HubungiRoute);
@@ -91,6 +92,7 @@ app.use(KataJelekRoute);
 app.use(KategoriRoute);
 app.use(LinkTerkaitRoute);
 app.use(LogoRoute);
+app.use(MenuRoute);
 app.use(ModulRoute);
 app.use(ModAlamatRoute);
 app.use(ModYmRoute);
