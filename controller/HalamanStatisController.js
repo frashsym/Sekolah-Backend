@@ -2,7 +2,6 @@
 import HalamanStatis from "../models/HalamanStatisModel.js";
 import path from "path";
 import fs from "fs";
-import argon2 from "argon2";
 
 // Create a new halaman statis
 export const CreateHalamanStatis = async (req, res) => {

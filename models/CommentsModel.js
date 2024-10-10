@@ -1,3 +1,4 @@
+// Ini buat tb_comments di database
 import { Sequelize } from "sequelize";
 import db from "../config/Database.js";
 
@@ -36,7 +37,7 @@ const Comments = db.define(
       allowNull: false,
     },
     tanggal_komentar: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATEONLY,
       allowNull: false,
     },
     jam_komentar: {

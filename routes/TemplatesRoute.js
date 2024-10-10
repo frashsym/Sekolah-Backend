@@ -5,7 +5,7 @@ import {
   createTemplates,
   updateTemplates,
   deleteTemplates,
-} from "../controller/TamplatesController.js";
+} from "../controller/TemplatesController.js";
 import verifyToken from "../middleware/token.js";
 import { checkBlacklist } from "../middleware/Blacklist.js";
 

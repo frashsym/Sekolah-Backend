@@ -3,20 +3,20 @@ import db from "../config/Database.js";
 
 const { DataTypes } = Sequelize;
 
-const IklanAtas = db.define(
-  "iklanatas",
+const Gallery = db.define(
+  "gallery",
   {
     id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true,
     },
-    judul: {
-      type: DataTypes.STRING,
+    id_album: {
+      type: DataTypes.INTEGER,
       allowNull: false,
-      validate: {
-        notEmpty: true,
-        len: [1, 100],
+      references: {
+        model: 'album',
+        key: 'id',
       },
     },
     username: {
@@ -24,10 +24,10 @@ const IklanAtas = db.define(
       allowNull: false,
       validate: {
         notEmpty: true,
-        len: [1, 50],
+        len: [1, 100],
       },
     },
-    url: {
+    jdl_gallery: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
@@ -35,30 +35,43 @@ const IklanAtas = db.define(
         len: [1, 100],
       },
     },
+    gallery_seo: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: true,
+        len: [1, 100],
+      },
+    },
+    keterangan: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
     gambar: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         notEmpty: true,
-        len: [1, 255],
+        len: [1, 100],
       },
     },
     url_gambar: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        notEmpty: true,
-        len: [1, 255],
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          notEmpty: true,
+          len: [1, 100],
+        },
       },
-    },
-    tgl_posting: {
-      type: DataTypes.DATEONLY,
-      allowNull: false,
-    },
   },
   {
     freezeTableName: true,
+    indexes: [
+      {
+        fields: ['id_album'],
+      },
+    ],
   }
 );
 
-export default IklanAtas;
+export default Gallery;

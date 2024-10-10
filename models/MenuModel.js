@@ -15,42 +15,30 @@ const Menu = db.define(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    nama_menu: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        notEmpty: true,
-        len: [1, 20],
-      },
-    },
     link: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         notEmpty: true,
-        len: [1, 255],
+        len: [1, 100],
       },
     },
     aktif: {
-      type: DataTypes.ENUM,
-      values: ["Yes", "No"],
-      allowNull: false,
-      validate: {
-        notEmpty: true,
+        type: DataTypes.ENUM,
+        values: ["Y", "N"],
+        allowNull: false,
+        validate: {
+          notEmpty: true,
+        },
       },
-    },
     position: {
-      type: DataTypes.ENUM,
-      values: ["Top", "Bottom"],
-      allowNull: false,
-      validate: {
-        notEmpty: true,
+        type: DataTypes.ENUM,
+        values: ["Top", "Bottom"],
+        allowNull: false,
+        validate: {
+          notEmpty: true,
+        },
       },
-    },
-    urutan: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
   },
   {
     freezeTableName: true,

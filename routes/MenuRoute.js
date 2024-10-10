@@ -1,7 +1,7 @@
 import express from "express";
 import {
   CreateMenu,
-  GetAllMenus,
+  GetAllMenu,
   GetMenuById,
   UpdateMenu,
   DeleteMenu,
@@ -12,7 +12,7 @@ import { checkBlacklist } from "../middleware/Blacklist.js";
 const router = express.Router();
 
 router.post("/menu", verifyToken, checkBlacklist, CreateMenu);
-router.get("/menu", verifyToken, checkBlacklist, GetAllMenus);
+router.get("/menu", verifyToken, checkBlacklist, GetAllMenu);
 router.get("/menu/:id", verifyToken, checkBlacklist, GetMenuById);
 router.put("/menu/:id", verifyToken, checkBlacklist, UpdateMenu);
 router.delete("/menu/:id", verifyToken, checkBlacklist, DeleteMenu);

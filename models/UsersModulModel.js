@@ -3,36 +3,28 @@ import db from "../config/Database.js";
 
 const { DataTypes } = Sequelize;
 
-const Statistik = db.define(
-  "statistik",
+const UsersModul = db.define(
+  "users_modul",
   {
     id: {
       type: DataTypes.INTEGER,
-      primaryKey: true,
       autoIncrement: true,
+      primaryKey: true,
     },
-    ip: {
+    id_session: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         notEmpty: true,
-        len: [1, 20],
+        len: [3, 255],
       },
     },
-    tanggal: {
-      type: DataTypes.DATEONLY,
-      allowNull: false,
-    },
-    hits: {
+    id_modul: {
       type: DataTypes.INTEGER,
       allowNull: false,
-    },
-    online: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        notEmpty: true,
-        len: [1, 255],
+      references: {
+        model: 'modul',
+        key: 'id',
       },
     },
   },
@@ -41,4 +33,4 @@ const Statistik = db.define(
   }
 );
 
-export default Statistik;
+export default UsersModul;

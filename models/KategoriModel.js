@@ -46,7 +46,7 @@ const Kategori = db.define(
       allowNull: false,
     },
     tanggal: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATEONLY,
       allowNull: false,
     },
   },

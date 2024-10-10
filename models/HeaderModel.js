@@ -44,7 +44,7 @@ const Header = db.define(
       },
     },
     tgl_posting: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATEONLY,
       allowNull: false,
     },
   },

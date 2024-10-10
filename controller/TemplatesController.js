@@ -1,4 +1,4 @@
-import Templates from "../models/TamplatesModel.js";
+import Templates from "../models/TemplatesModel.js";
 
 export const getTemplates = async (req, res) => {
   try {

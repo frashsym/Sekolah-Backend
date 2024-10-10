@@ -1,5 +1,5 @@
 import express from "express";
-import { login, logout } from "../controller/AdministatorController.js";
+import { login, logout } from "../controller/AdministratorController.js";
 import { checkBlacklist } from "../middleware/Blacklist.js";
 const router = express.Router();
 

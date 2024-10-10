@@ -48,7 +48,7 @@ const Pengumuman = db.define(
       },
     },
     tanggal: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATEONLY,
       allowNull: false,
     },
   },
