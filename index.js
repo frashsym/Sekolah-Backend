@@ -6,6 +6,7 @@ import session from "express-session";
 import SequelizeStore from "connect-session-sequelize";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
+import { API_Frontend } from "./api/api.js"
 
 // Bagian Route dari Controller
 import AdministratorRoute from "./routes/AdministratorRoute.js";
@@ -77,7 +78,7 @@ app.use(
 app.use(
   cors({
     credentials: true, // Mengizinkan pengiriman kredensial seperti cookie
-    origin: "http://localhost:3000", // Mengizinkan akses hanya dari origin ini
+    origin: API_Frontend, // Mengizinkan akses hanya dari origin ini
   })
 );
 
