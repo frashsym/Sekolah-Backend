@@ -51,6 +51,7 @@ const Users = db.define(
       // Mendefinisikan kolom url tanpa validasi tambahan
       type: DataTypes.STRING,
     },
+    // Ganti jadi ngambil id di tabel role
     role: {
       type: DataTypes.STRING,
       allowNull: false,
