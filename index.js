@@ -77,8 +77,8 @@ app.use(
 // Konfigurasi middleware CORS
 app.use(
   cors({
-    credentials: true, // Mengizinkan pengiriman kredensial seperti cookie
     origin: API_Frontend, // Mengizinkan akses hanya dari origin ini
+    credentials: true, // Mengizinkan pengiriman kredensial seperti cookie
   })
 );
 
@@ -87,6 +87,11 @@ app.use(FileUpload()); // Middleware untuk menangani upload file
 app.use(cookieParser());
 app.use(express.static("public"));
 app.use(express.static("public/images/user"));
+
+// simple route
+app.get("/", (req, res) => {
+  res.json({ message: "Welcome to dashboard sekolah application." });
+});
 
 // Kumpulan route berdasarkan abjad
 app.use(AdministratorRoute);

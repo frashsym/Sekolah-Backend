@@ -1,2 +1,3 @@
-export const API_Frontend = "localhost:3000";
-export const API_Backend = "localhost:5002";
+export const API_Frontend = "http://localhost:3002";
+export const API_Backend = "http://localhost:5002";
+

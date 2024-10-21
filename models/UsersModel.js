@@ -15,6 +15,7 @@ const Users = db.define(
     username: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true,
       validate: {
         notEmpty: true,
         len: [3, 100],
@@ -34,6 +35,7 @@ const Users = db.define(
     email: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true,
       validate: {
         notEmpty: true,
         isEmail: true,
@@ -51,10 +53,13 @@ const Users = db.define(
       // Mendefinisikan kolom url tanpa validasi tambahan
       type: DataTypes.STRING,
     },
-    // Ganti jadi ngambil id di tabel role
     role: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER, // Ubah tipe data menjadi INTEGER
       allowNull: false,
+      references: { // Tambahkan referensi ke tabel role
+        model: 'role', // Nama tabel yang direferensikan
+        key: 'id', // Kunci yang direferensikan
+      },
       validate: {
         notEmpty: true,
       },
@@ -63,6 +68,7 @@ const Users = db.define(
       type: DataTypes.ENUM,
       values: ["Y", "N"],
       allowNull: false,
+      defaultValue: "N", // Menetapkan nilai default menjadi "N"
     },
     //   id_session: {
     //     type: DataTypes.STRING,

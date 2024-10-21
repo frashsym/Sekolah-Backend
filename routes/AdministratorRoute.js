@@ -1,9 +1,8 @@
 import express from "express";
 import { login, logout } from "../controller/AdministratorController.js";
-import { checkBlacklist } from "../middleware/Blacklist.js";
 const router = express.Router();
 
 router.post("/login", login);
-router.delete("/logout", checkBlacklist, logout);
+router.delete("/logout", logout);
 
 export default router;
