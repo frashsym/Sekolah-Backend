@@ -4,7 +4,7 @@ import db from "../config/Database.js";
 const { DataTypes } = Sequelize;
 
 const TagVideo = db.define(
-  "tgvid",
+  "tagvid",
   {
     id: {
       type: DataTypes.INTEGER,
